@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body{
+            height: 100px;
+            width: 300px;
+            border: 2px solid red;
+             position: relative; 
+             margin-left: 30px;
+             border-top-right-radius: 60%;
+           
+        }
+        .wheel1{
+            height: 50px;
+            width: 50px;
+            border: 2px solid rgb(52, 4, 223);
+            position: absolute;
+            top: 74px;
+            left: 20px;
+            border-radius: 50%;
+        }
+        .wheel2{
+            height: 50px;
+            width: 50px;
+            border: 2px solid rgb(52, 4, 223);
+            position: absolute;
+            top: 74px;
+            left: 215px;
+            border-radius: 50%;
+        }
+        .window{
+            border: 1px solid green;
+            width: 30px;
+            height: 30px;
+            float: left;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+        #parallelogram {
+      width: 150px;
+      height: 100px;
+      transform: skew(20deg);
+      background: red;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="body" id="box">
+        <div class="wheel1">
+
+        </div>
+        <div class="wheel2">
+
+        </div>
+        
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+        
+    </div>
+
+    <div id="parallelogram"></div>
+
+
+    
+    <script>
+         var margin=0;
+         var flag=true;
+        setInterval(function(){ 
+            if(flag){
+                margin++;
+                if(margin==700){
+                    flag=false;
+                }
+            }else{
+                margin--;
+                if(margin==0){
+                    flag=true;
+                }
+            }
+            
+            document.getElementById("box").style.marginLeft=margin+"px";
+            document.getElementById("parallelogram").style.transform="skew("+margin+"deg)";
+         }, 10);
+       
+        
+    </script>
+</body>
+</html>
